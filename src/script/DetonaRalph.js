@@ -14,10 +14,24 @@ const state = {
     vidasRestante: 3,
   },
   actions: {
-    tempoId: setInterval(sortearInimigo, 1000),
-    contagemRegressivaDoTempo: setInterval(contagemRegressiva, 1000),
+    tempoId: null,
+    contagemRegressivaDoTempo: null,
   },
 };
+
+function iniciarGame() {
+  state.values.tempoCorrido = 60;
+  state.values.vidasRestante = 3;
+  state.values.resultado = 0;
+  state.view.tempo.textContent = state.values.tempoCorrido;
+  state.view.vidasRestante.textContent = state.values.vidasRestante;
+  state.view.pontuacao.textContent = state.values.resultado;
+  state.actions.tempoId = setInterval(sortearInimigo, 1000);
+  state.actions.contagemRegressivaDoTempo = setInterval(
+    contagemRegressiva,
+    1000
+  );
+}
 
 function sortearInimigo() {
   state.view.squares.forEach((square) => {
@@ -53,7 +67,10 @@ function contagemRegressiva() {
   if (state.values.tempoCorrido <= 0 || state.values.vidasRestante <= 0) {
     clearInterval(state.actions.contagemRegressivaDoTempo);
     clearInterval(state.actions.tempoId);
+
     alert("Game Over! O seu resultado foi: " + state.values.resultado);
+
+  iniciarGame();
   }
 }
 
@@ -65,6 +82,7 @@ function somFundo() {
 
 function main() {
   addListenerHitBox();
+  iniciarGame();
 }
 
 main();
