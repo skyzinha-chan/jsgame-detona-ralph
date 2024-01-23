@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detona Ralph</title>
+
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- folhas de estilo -->
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="menu">
+            <div class="menu-tempo">
+                <h2 style="color: red;">Seu Tempo</h2>
+                <h2 id="tempo">0</h2>
+            </div>
+            <div class="menu-pontuacao">
+                <h2 style="color: red;">Sua Pontuação</h2>
+                <h2 id="pontuacao">0</h2>
+            </div>
+            <div class="menu-vidas">
+                <img src="./src/imagens/player.png" alt="foto do jogador" height="60px"/>
+                <h2 id="vidas-restante">X3</h2>
+            </div>
+        </div>
+        <div class="painel">
+            <div class="painel-coluna1">
+                <div class="square" id="1"></div>
+                <div class="square" id="2"></div>
+                <div class="square" id="3"></div>
+            </div>
+
+            <div class="painel-coluna2">
+                <div class="square" id="4"></div>
+                <div class="square" id="5"></div>
+                <div class="square" id="6"></div>
+            </div>
+
+            <div class="painel-coluna3">
+                <div class="square" id="7"></div>
+                <div class="square" id="8"></div>
+                <div class="square" id="9"></div>
+            </div>
+        </div>
+    </div>
+
+    <script defer src="./src/script/DetonaRalph.js"></script>
+</body>
+
+</html>
